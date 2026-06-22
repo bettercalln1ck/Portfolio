@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)file:///Users/nikhilkumar/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikhil Kumar — iOS &amp; Mobile Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1d23;
+    --ink-soft: #4a4f57;
+    --paper: #f7f5f0;
+    --paper-deep: #efece4;
+    --line: #d8d3c7;
+    --accent: #6b4f3f;
+    --accent-deep: #4a3527;
+    --gold: #9a7b4f;
+    --white: #fdfcfa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247, 245, 240, 0.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+  .brand span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Hero */
+  header.hero { padding: 110px 0 90px; border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero p.lede {
+    font-size: 1.18rem;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 13px 26px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent-deep); color: var(--white); }
+  .btn-primary:hover { background: var(--ink); }
+  .btn-ghost { color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Section scaffolding */
+  section { padding: 86px 0; border-bottom: 1px solid var(--line); }
+  .section-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 52px; }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    letter-spacing: -0.01em;
+  }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; }
+  .about-grid p { color: var(--ink-soft); margin-bottom: 18px; font-size: 1.04rem; }
+  .about-side h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .about-side h4:not(:first-child) { margin-top: 28px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skills span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    background: var(--paper-deep);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-soft);
+  }
+  .stat-row { display: flex; gap: 40px; margin-top: 8px; }
+  .stat .n {
+    font-family: 'Fraunces', serif;
+    font-size: 2.2rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat .l {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  /* Projects */
+  .project {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: start;
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    transition: padding-left 0.25s;
+  }
+  .project:hover { padding-left: 8px; }
+  .project:last-child { border-bottom: 1px solid var(--line); }
+  .project h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .project p { color: var(--ink-soft); font-size: 0.98rem; margin-bottom: 12px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 7px; }
+  .stack span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+  }
+  .stack span::after { content: '·'; margin-left: 7px; color: var(--line); }
+  .stack span:last-child::after { content: ''; }
+  .project .link {
+    align-self: center;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 1.3rem;
+    transition: transform 0.2s, color 0.2s;
+  }
+  .project:hover .link { color: var(--accent); transform: translate(3px, -3px); }
+
+  .subhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 56px 0 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .subhead span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .subhead .all-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .subhead .all-link:hover { color: var(--ink); }
+
+  /* Resume */
+  .resume-row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 28px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .resume-row:last-child { border-bottom: 1px solid var(--line); }
+  .resume-row .when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  .resume-row .loc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--gold);
+    margin-top: 4px;
+  }
+  .resume-row h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.2rem; }
+  .resume-row .org { color: var(--gold); font-size: 0.92rem; margin-bottom: 12px; }
+  .resume-row ul { list-style: none; }
+  .resume-row li {
+    color: var(--ink-soft);
+    font-size: 0.96rem;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 7px;
+  }
+  .resume-row li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+  .resume-cta { margin-top: 40px; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 100px 0; border-bottom: none; }
+  .contact h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .contact h2 em { font-style: italic; color: var(--accent); }
+  .contact p { color: var(--ink-soft); font-size: 1.1rem; max-width: 480px; margin: 0 auto 36px; }
+  .contact-links { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; }
+  .contact-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+  footer {
+    text-align: center;
+    padding: 36px 0;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    background: var(--paper-deep);
+  }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .project { grid-template-columns: 1fr; gap: 8px; }
+    .project .link { display: none; }
+    .resume-row { grid-template-columns: 1fr; gap: 10px; }
+    .stat-row { gap: 28px; }
+    .wrap { padding: 0 22px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Nikhil<span>.</span>Kumar</div>
+    <ul class="nav-links">
+      <li><a href="file:///Users/nikhilkumar/Downloads/index.html#about">About</a></li>
+      <li><a href="file:///Users/nikhilkumar/Downloads/index.html#work">Work</a></li>
+      <li><a href="file:///Users/nikhilkumar/Downloads/index.html#resume">Experience</a></li>
+      <li><a href="file:///Users/nikhilkumar/Downloads/index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">iOS &amp; Mobile Engineer · SDE 2</p>
+    <h1 class="reveal in">Crafting consumer apps<br>that ship at <em>scale</em>.</h1>
+    <p class="lede reveal in">I'm Nikhil — a mobile engineer with 4+ years building high-traffic consumer apps across iOS (Swift, SwiftUI, Combine), React Native, and Kotlin Multiplatform. I work on the things that move the needle: performance, conversion, and engagement, backed by A/B testing, CI/CD automation, and server-driven UI.</p>
+    <div class="hero-actions reveal in">
+      <a href="file:///Users/nikhilkumar/Downloads/index.html#work" class="btn btn-primary">View my work</a>
+      <a href="file:///Users/nikhilkumar/Downloads/index.html#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>I build consumer mobile apps used by millions, with a focus on iOS. Over the last four years I've shipped features end to end across Meesho, Licious, and now Quince — from server-driven UI components and launch-time optimizations to A/B testing frameworks and deep linking infrastructure.</p>
+        <p>I like the work that compounds: experimentation frameworks that let teams make data-driven decisions, CI/CD pipelines that shorten release cycles, and reusable components that accelerate every feature after them. I've also worked across the platform divide with Kotlin Multiplatform and React Native, sharing logic without compromising the native feel.</p>
+        <p>I graduated from IIIT Allahabad with a B.Tech in Information Technology, and I got my start in open source contributing security checks to OWASP ZAP.</p>
+        <div class="stat-row">
+          <div class="stat"><div class="n">4+</div><div class="l">Years experience</div></div>
+          <div class="stat"><div class="n">2.7s</div><div class="l">Launch time cut</div></div>
+          <div class="stat"><div class="n">10%</div><div class="l">Daily orders driven</div></div>
+        </div>
+      </div>
+      <div class="about-side">
+        <h4>Languages</h4>
+        <div class="skills">
+          <span>Swift</span><span>Objective-C</span><span>Kotlin</span><span>JavaScript</span><span>C++</span><span>Python</span><span>Java</span>
+        </div>
+        <h4>iOS / Mobile</h4>
+        <div class="skills">
+          <span>SwiftUI</span><span>Combine</span><span>MVVM</span><span>Coordinator</span><span>XCTest</span><span>MetricKit</span><span>CoreData</span><span>Fastlane</span><span>Xcode Cloud</span><span>KMM</span>
+        </div>
+        <h4>Tools</h4>
+        <div class="skills">
+          <span>Git</span><span>REST</span><span>Statsig</span><span>Firebase</span><span>AppsFlyer</span><span>Postman</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Selected work</h2>
+    </div>
+    <div class="reveal">
+      <div class="project">
+        <div>
+          <h3>Shop Tab A/B testing framework</h3>
+          <p>Built an experimentation framework at Quince with customer segment-based personalization, letting the team make data-driven product decisions on the shop experience.</p>
+          <div class="stack"><span>Swift</span><span>Statsig</span><span>Server-Driven UI</span></div>
+        </div>
+        <a href="file:///Users/nikhilkumar/Downloads/index.html#" class="link" aria-label="View project">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Unified iOS + React Native CI/CD</h3>
+          <p>Integrated Xcode Cloud to run continuous integration and deployment for native iOS and React Native from a single monorepo at Licious, cutting manual effort and accelerating release cycles.</p>
+          <div class="stack"><span>Xcode Cloud</span><span>React Native</span><span>Fastlane</span></div>
+        </div>
+        <a href="file:///Users/nikhilkumar/Downloads/index.html#" class="link" aria-label="View project">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Launch-time optimization</h3>
+          <p>Cut app launch time by 2.7 seconds at Meesho by parallelizing launch animations with configuration API calls and optimizing homepage loading.</p>
+          <div class="stack"><span>Swift</span><span>Combine</span><span>Performance</span></div>
+        </div>
+        <a href="file:///Users/nikhilkumar/Downloads/index.html#" class="link" aria-label="View project">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Kotlin Multiplatform analytics</h3>
+          <p>Used KMM to make Meesho's Android analytics module reusable on iOS, sharing core logic across platforms while keeping each app native.</p>
+          <div class="stack"><span>Kotlin</span><span>KMM</span><span>iOS</span></div>
+        </div>
+        <a href="file:///Users/nikhilkumar/Downloads/index.html#" class="link" aria-label="View project">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Superstore grocery vertical</h3>
+          <p>Integrated a grocery vertical into Meesho's iOS app using WebView with JS bridges. The feature went on to contribute 10% of daily orders.</p>
+          <div class="stack"><span>Swift</span><span>WebView</span><span>JS Bridge</span></div>
+        </div>
+        <a href="file:///Users/nikhilkumar/Downloads/index.html#" class="link" aria-label="View project">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>OWASP ZAP — open source</h3>
+          <p>Contributed DOM inspection support for detecting DOM-based XSS, plus checks for web cache deception attacks and bulk import of attack payloads.</p>
+          <div class="stack"><span>Java</span><span>Security</span><span>Open Source</span></div>
+        </div>
+        <a href="https://www.zaproxy.org/" class="link" aria-label="View project">↗</a>
+      </div>
+    </div>
+
+    <div class="subhead reveal">
+      <span>Recent on GitHub</span>
+      <a href="https://github.com/bettercalln1ck" class="all-link">View all 66 repos ↗</a>
+    </div>
+    <div class="reveal">
+      <div class="project">
+        <div>
+          <h3>SoftChaosClub — art gallery e-commerce</h3>
+          <p>A full-stack e-commerce platform for selling paintings, with user and admin auth, a shopping cart, Razorpay checkout, and Cloudinary image storage. Live in production.</p>
+          <div class="stack"><span>React 19</span><span>TypeScript</span><span>Express</span><span>MongoDB</span><span>JWT</span></div>
+        </div>
+        <a href="https://soft-chaos-club.vercel.app/" class="link" aria-label="View live site">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Dream Server — local AI server stack</h3>
+          <p>Active contributor (2,000+ commits) to an open-source one-command installer that turns any machine into a private AI server: local LLM inference, chat UI, voice, agents, RAG, and image generation across NVIDIA, AMD, Apple Silicon, and Intel Arc.</p>
+          <div class="stack"><span>Shell</span><span>Python</span><span>Docker</span><span>Rust</span></div>
+        </div>
+        <a href="https://github.com/bettercalln1ck/DreamServer" class="link" aria-label="View repository">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>iOS Interview Prep</h3>
+          <p>A personal collection of iOS interview preparation material — Swift concepts, data structures, and system design notes drawn from real mobile engineering work. <em>(Description to confirm.)</em></p>
+          <div class="stack"><span>Swift</span><span>iOS</span></div>
+        </div>
+        <a href="https://github.com/bettercalln1ck/iosinterviewprep" class="link" aria-label="View repository">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Bon Voyage — AI travel itinerary</h3>
+          <p>A travel planning platform with a personalized itinerary planner, destination wiki, group planning, real-time chat, and shared expense tracking. Built on the MERN stack with Google Maps and Best Time APIs.</p>
+          <div class="stack"><span>Node.js</span><span>MongoDB</span><span>React</span><span>Google Maps API</span></div>
+        </div>
+        <a href="https://github.com/bettercalln1ck/bonvoyage-Backend" class="link" aria-label="View repository">↗</a>
+      </div>
+      <div class="project">
+        <div>
+          <h3>Hum Safar — synced video watching</h3>
+          <p>A Node.js app that synchronizes video playback among multiple users in real time, with account management and a shared viewing session.</p>
+          <div class="stack"><span>Node.js</span><span>JavaScript</span><span>MySQL</span></div>
+        </div>
+        <a href="https://github.com/bettercalln1ck/Hum_safar" class="link" aria-label="View repository">↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="reveal">
+      <div class="resume-row">
+        <div>
+          <span class="when">Sep 2025 — Present</span>
+          <div class="loc">Bangalore, India</div>
+        </div>
+        <div>
+          <h3>Mobile Engineer (SDE 2)</h3>
+          <div class="org">Quince</div>
+          <ul>
+            <li>Built a Shop Tab A/B testing framework with customer segment-based personalization.</li>
+            <li>Led the migration from Firebase to Statsig, centralizing dynamic configuration across the app.</li>
+            <li>Resolved critical deep linking issues — AppsFlyer UTM handling, discount auto-apply, double navigation — improving conversion tracking.</li>
+            <li>Implemented a half-and-half hero layout with dual-media display and a full-width promotional banner system.</li>
+            <li>Integrated the Velou filter system for advanced product discovery.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resume-row">
+        <div>
+          <span class="when">Jan 2025 — Aug 2025</span>
+          <div class="loc">Bangalore, India</div>
+        </div>
+        <div>
+          <h3>SDE 2</h3>
+          <div class="org">Licious</div>
+          <ul>
+            <li>Integrated Xcode Cloud for CI/CD across native iOS and React Native from a unified monorepo.</li>
+            <li>Built configurable animated launch screens driven by remote config, enabling dynamic branding without app updates.</li>
+            <li>Developed a configuration override mechanism for toggling feature flags and API environments, speeding up QA.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resume-row">
+        <div>
+          <span class="when">Jan 2022 — Jan 2025</span>
+          <div class="loc">Bangalore, India</div>
+        </div>
+        <div>
+          <h3>SDE</h3>
+          <div class="org">Meesho</div>
+          <ul>
+            <li>Worked on Kotlin Multiplatform (KMM) to reuse the Android analytics module on iOS.</li>
+            <li>Added multilingual support, boosting engagement and Daily Active Users across regional languages.</li>
+            <li>Led a complete UI overhaul — launch animations, Lottie, updated color schemes — increasing engagement and orders.</li>
+            <li>Integrated the Superstore grocery vertical (WebView + JS bridges), contributing 10% of daily orders.</li>
+            <li>Reduced app launch time by 2.7s and built reusable SDUI components (carousels, feeds, video player).</li>
+            <li>Replaced legacy notification flows with Combine; revamped ODP in SwiftUI (MVVM + coordinator); integrated OAuth2 login.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resume-row">
+        <div>
+          <span class="when">Part-time</span>
+          <div class="loc">Remote</div>
+        </div>
+        <div>
+          <h3>Software Engineer, AI Reviewer</h3>
+          <div class="org">micro1</div>
+          <ul>
+            <li>Reviewed AI-generated code and model outputs for correctness, quality, and best practices.</li>
+            <li>Provided detailed feedback and rankings to improve LLM performance on software engineering tasks.</li>
+            <li>Assessed solutions across multiple languages, identifying edge cases, bugs, and optimizations.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resume-row">
+        <div>
+          <span class="when">Jul 2018 — Jul 2022</span>
+          <div class="loc">CGPA 7.9 / 10</div>
+        </div>
+        <div>
+          <h3>B.Tech, Information Technology</h3>
+          <div class="org">IIIT Allahabad</div>
+          <ul>
+            <li>Indian Institute of Information Technology, Allahabad.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resume-cta">
+        <a href="file:///Users/nikhilkumar/Downloads/index.html#" class="btn btn-ghost">Download résumé (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Let's build something <em>great</em>.</h2>
+    <p class="reveal">I'm open to interesting mobile engineering roles and collaborations. Email is the fastest way to reach me.</p>
+    <div class="contact-links reveal">
+      <a href="mailto:nikhilkmr6303@gmail.com">nikhilkmr6303@gmail.com</a>
+      <a href="tel:+916205124459">+91 6205124459</a>
+      <a href="https://www.linkedin.com/in/bettercalln1ck" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/bettercalln1ck" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Nikhil Kumar · Bangalore, India</div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+
+
+</body></html>
